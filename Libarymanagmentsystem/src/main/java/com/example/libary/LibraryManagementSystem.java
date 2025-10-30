@@ -19,6 +19,7 @@ class Book {
     }
 }
 }
+{
 public class LibraryManagementSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -43,67 +44,6 @@ public class LibraryManagementSystem {
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
 
-            String input = sc.nextLine();
-            int choice;
-            try {
-                choice = Integer.parseInt(input.trim());
-            } catch (NumberFormatException e) {
-                System.out.println("* Invalid input! Please enter a number (1-5).");
-                continue;
-            }
-
-            switch (choice) {
-                case 1:
-                    System.out.println("\n--- List of Books ---");
-                    for (Book b : books) {
-                        System.out.println(b);
-                    }
-                    break;
-
-                case 2:
-                    try {
-                        System.out.print("Enter ID: ");
-                        int id = Integer.parseInt(sc.nextLine().trim());
-
-                        System.out.print("Enter Title: ");
-                        String title = sc.nextLine();
-
-                        System.out.print("Enter Author: ");
-                        String author = sc.nextLine();
-
-                        System.out.print("Enter Year: ");
-                        int year = Integer.parseInt(sc.nextLine().trim());
-
-                        books.add(new Book(id, title, author, year));
-                        System.out.println(" Book added!");
-                    } catch (NumberFormatException e) {
-                        System.out.println("* Invalid input! Book not added.");
-                    }
-                    break;
-
-                case 3:
-                    try {
-                        System.out.print("Enter Book ID to update: ");
-                        int uid = Integer.parseInt(sc.nextLine().trim());
-                        boolean found = false;
-                        for (Book b : books) {
-                            if (b.id == uid) {
-                                System.out.print("Enter new Title: ");
-                                b.title = sc.nextLine();
-                                System.out.print("Enter new Author: ");
-                                b.author = sc.nextLine();
-                                System.out.print("Enter new Year: ");
-                                b.year = Integer.parseInt(sc.nextLine().trim());
-                                System.out.println(" Book updated!");
-                                found = true;
-                                break;
-                            }
-                        }
-                        if (!found) System.out.println("* Book not found!");
-                    } catch (NumberFormatException e) {
-                        System.out.println("* Invalid input! Update failed.");
-                    }
-                    
             }
         }
     }
