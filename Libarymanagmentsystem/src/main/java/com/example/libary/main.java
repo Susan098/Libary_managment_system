@@ -1,3 +1,4 @@
+
 class Book {
     int id;
     String title;
@@ -15,7 +16,7 @@ class Book {
         return id + " | " + title + " | " + author + " | " + year;
     }
 }
-}
+{
 public class LibraryManagementSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -39,3 +40,10 @@ public class LibraryManagementSystem {
             System.out.println("4. Delete Book");
             System.out.println("5. Exit");
             System.out.print("Enter your choice: ");
+
+           
+            }
+        }
+    }
+}
+
