@@ -32,7 +32,7 @@ public class LibraryManagementSystem {
         books.add(new Book(5, "Nepali", "Mina Sapkota", 2082));
         books.add(new Book(6, "Java", "Apar Bhandari", 2079));
         books.add(new Book(7, "Coa", "Saugat don", 2081));
-        books.add(new Book(8, "Mobile Application", "Don Dai ly", 2080));
+        books.add(new Book(8, "Mobile Application", "Saubhagya", 2080));
         books.add(new Book(9, "Operating System", "Devi lal Adhakari", 2083));
 
         while (true) {
