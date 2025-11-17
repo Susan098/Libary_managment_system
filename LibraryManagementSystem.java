@@ -21,7 +21,8 @@ class Book {
 public class LibraryManagementSystem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArrayList<Book> books = new ArrayList<>();
+
+        
 
         books.add(new Book(1, "Foundation of mathematics engineering", "Durga jang K.C", 2078));
         books.add(new Book(2, "Principles of Engineering Physics", "Dr.Rajendra Parsad Khanal", 2078));
