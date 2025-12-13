@@ -3,15 +3,15 @@ package com.example.libary.utils;
 import java.util.Scanner;
 
 public class InputUtils {
-    private static Scanner sc = new Scanner(System.in);
+    public static final Scanner scanner = new Scanner(System.in);
 
-    public static String getString(String message) {
+    public static String readString(String message) {
         System.out.print(message);
-        return sc.nextLine();
+        return scanner.nextLine();
     }
 
-    public static int getInt(String message) {
+    public static int readInt(String message) {
         System.out.print(message);
-        return sc.nextInt();
+        return Integer.parseInt(scanner.nextLine());
     }
 }

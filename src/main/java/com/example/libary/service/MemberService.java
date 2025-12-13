@@ -1,23 +1,18 @@
 package com.example.libary.service;
 
-import com.example.libary.dao.LibraryDao;
+import com.example.libary.dao.MemberDao;
 import com.example.libary.model.Member;
 
 public class MemberService {
+    private final MemberDao memberDao = new MemberDao();
 
-    private LibraryDao libraryDao;
-
-    public MemberService(LibraryDao libraryDao) {
-        this.libraryDao = libraryDao;
+    public void register(String username, String password) {
+        memberDao.addMember(new Member(username, password));
+        System.out.println("Registration successful!");
     }
 
-    public void registerMember(String name) {
-        libraryDao.addMember(new Member(name));
-        System.out.println("Member '" + name + "' registered successfully!");
-    }
-
-    public void viewMembers() {
-        System.out.println("Members List");
-        libraryDao.getMembers().forEach(m -> System.out.println(m.getName()));
+    public boolean login(String username, String password) {
+        Member member = memberDao.findByUsername(username);
+        return member != null && member.getPassword().equals(password);
     }
 }

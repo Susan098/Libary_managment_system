@@ -1,14 +1,19 @@
 package com.example.libary.model;
 
 public class Member {
-    private String name;
+    private String username;
+    private String password;
 
-    public Member(String name) {
-        this.name = name;
+    public Member(String username, String password) {
+        this.username = username;
+        this.password = password;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
     }
 }
-

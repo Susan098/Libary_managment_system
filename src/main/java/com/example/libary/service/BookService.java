@@ -1,32 +1,25 @@
 package com.example.libary.service;
 
-import com.example.libary.dao.LibraryDao;
+import com.example.libary.dao.BookDao;
 import com.example.libary.model.Book;
 
 public class BookService {
+    private final BookDao bookDao = new BookDao();
+    private int bookId = 1;
 
-    private LibraryDao libraryDao;
-
-    public BookService(LibraryDao libraryDao) {
-        this.libraryDao = libraryDao;
+    public void addBook(String title, String author) {
+        bookDao.addBook(new Book(bookId++, title, author));
     }
 
-    public void addBook(String title) {
-        libraryDao.addBook(new Book(title));
-        System.out.println("Book '" + title + "' added successfully!");
-    }
+    public void showBooks() {
+        if (bookDao.getAllBooks().isEmpty()) {
+            System.out.println("No books available.");
+            return;
+        }
 
-    public void issueBook(String bookTitle, String memberName) {
-        System.out.println("Book '" + bookTitle + "' issued to '" + memberName + "' successfully!");
-    }
-
-    public void returnBook(String title) {
-        System.out.println("Book '" + title + "' returned successfully!");
-    }
-
-    public void viewBooks() {
-        System.out.println("Books List");
-        libraryDao.getBooks().forEach(b -> System.out.println(b.getTitle()));
+        for (Book book : bookDao.getAllBooks()) {
+            System.out.println(book);
+        }
     }
 }
 
